@@ -8,7 +8,7 @@ namespace RundomNumber
 {
     class Program
     {
-        static float IsNumber(string data) //функции для проверки корректности введенных данных (число и попадание в диапазон)
+        static float IsNumber(string data) //функции для проверки корректности введенных пользователем данных (число и попадание в диапазон)
         {        
             float number = default(float);
 
