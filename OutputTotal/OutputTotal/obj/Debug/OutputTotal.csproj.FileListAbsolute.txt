@@ -1,0 +1,6 @@
+F:\Job\Coding\C#\OutputTotal\OutputTotal\bin\Debug\OutputTotal.exe.config
+F:\Job\Coding\C#\OutputTotal\OutputTotal\bin\Debug\OutputTotal.exe
+F:\Job\Coding\C#\OutputTotal\OutputTotal\bin\Debug\OutputTotal.pdb
+F:\Job\Coding\C#\OutputTotal\OutputTotal\obj\Debug\OutputTotal.csprojResolveAssemblyReference.cache
+F:\Job\Coding\C#\OutputTotal\OutputTotal\obj\Debug\OutputTotal.exe
+F:\Job\Coding\C#\OutputTotal\OutputTotal\obj\Debug\OutputTotal.pdb

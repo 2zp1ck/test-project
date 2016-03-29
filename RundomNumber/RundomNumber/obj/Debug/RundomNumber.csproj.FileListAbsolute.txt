@@ -1,0 +1,6 @@
+F:\Job\Coding\C#\RundomNumber\RundomNumber\bin\Debug\RundomNumber.exe.config
+F:\Job\Coding\C#\RundomNumber\RundomNumber\bin\Debug\RundomNumber.exe
+F:\Job\Coding\C#\RundomNumber\RundomNumber\bin\Debug\RundomNumber.pdb
+F:\Job\Coding\C#\RundomNumber\RundomNumber\obj\Debug\RundomNumber.csprojResolveAssemblyReference.cache
+F:\Job\Coding\C#\RundomNumber\RundomNumber\obj\Debug\RundomNumber.exe
+F:\Job\Coding\C#\RundomNumber\RundomNumber\obj\Debug\RundomNumber.pdb

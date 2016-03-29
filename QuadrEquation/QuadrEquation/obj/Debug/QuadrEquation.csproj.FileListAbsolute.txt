@@ -1,0 +1,6 @@
+F:\Job\Coding\C#\QuadrEquation\QuadrEquation\bin\Debug\QuadrEquation.exe.config
+F:\Job\Coding\C#\QuadrEquation\QuadrEquation\bin\Debug\QuadrEquation.exe
+F:\Job\Coding\C#\QuadrEquation\QuadrEquation\bin\Debug\QuadrEquation.pdb
+F:\Job\Coding\C#\QuadrEquation\QuadrEquation\obj\Debug\QuadrEquation.exe
+F:\Job\Coding\C#\QuadrEquation\QuadrEquation\obj\Debug\QuadrEquation.pdb
+F:\Job\Coding\C#\QuadrEquation\QuadrEquation\obj\Debug\QuadrEquation.csprojResolveAssemblyReference.cache

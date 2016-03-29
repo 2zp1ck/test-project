@@ -1,0 +1,11 @@
+#игнорируем папку
+logs/
+outputtotal/
+quadrequation/
+linearequation/
+
+#игнорируем файлы с определенным расширением
+docs/*.txt
+
+
+#git status --untracked-files=all (показать видимые ненаблюдаемые файлы в Git)
