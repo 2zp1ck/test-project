@@ -8,3 +8,5 @@ Part 5
 
 Part 6
 Part 7
+
+изменение после push на github
