@@ -10,3 +10,6 @@ F:\Job\Coding\C#\LinearEquation\ConsoleApplication3\obj\Debug\ConsoleApplication
 F:\Job\Coding\C#\LinearEquation\ConsoleApplication3\bin\Debug\ConsoleApplication3.exe
 F:\Job\Coding\C#\LinearEquation\ConsoleApplication3\bin\Debug\ConsoleApplication3.pdb
 F:\Job\Coding\C#\LinearEquation\ConsoleApplication3\obj\Debug\ConsoleApplication3.csprojResolveAssemblyReference.cache
+F:\Job\Coding\C#\Tasks\LinearEquation\ConsoleApplication3\bin\Debug\ConsoleApplication3.exe.config
+F:\Job\Coding\C#\Tasks\LinearEquation\ConsoleApplication3\obj\Debug\ConsoleApplication3.exe
+F:\Job\Coding\C#\Tasks\LinearEquation\ConsoleApplication3\obj\Debug\ConsoleApplication3.pdb
