@@ -6,16 +6,15 @@ using System.Threading.Tasks;
 
 namespace Snake
 {
-    class Point //класс для обозначения точки (класс может состоять из данных и функций)
+    class Point //класс для обозначения точки
     {
         public int x;
         public int y;
         public char sym;
 
         //конструктор - функция, которая вызывается при создании объекта указанного класса
-        public Point() //функция-конструктор никогда ничего не возвращает
-        {
-            //Console.WriteLine("Создается новая точка");
+        public Point()
+        {            
         }
 
         public Point(int _x, int _y, char _sym)
