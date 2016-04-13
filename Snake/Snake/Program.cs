@@ -28,24 +28,19 @@ namespace Snake
             Point p = new Point(4, 5, '*');
             Snake snake = new Snake(p, 4, Direction.RIGHT); //создаем переменную snake класса Snake
             snake.DrawLine(); //вывод змейки на экран
-            snake.Move(); //вызов метода Move для перемещения змейки
-            Thread.Sleep(300); //задержка на 300 мс
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
+            
+            while (true) //бесконечный цикл
+            {
+                if (Console.KeyAvailable) //проверка, была ли нажата какая-либо клавиша
+                {
+                    ConsoleKeyInfo key = Console.ReadKey(); //в переменную key получаем значение нажатой клавиши
+                    snake.HandleKey(key.Key); //вызов метода HandleKey класса Snake для проверки клавиши
+                }
+                //если никакая клавиша из указанных нажата не была, то змейка продолжает двигаться в том же направлении, что и ранее
 
-            Console.ReadLine(); //ожидание нажатия Enter от пользователя
+                Thread.Sleep(150); //задержка
+                snake.Move(); //смещение змейки с помощью метода Move
+            }            
         }   
     }
 }

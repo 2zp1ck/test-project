@@ -42,5 +42,17 @@ namespace Snake
             nextPoint.Move(1, direction); //сдвигаем точку по направлению direction
             return nextPoint; //получение и возврат новой точки с новыми координатами для положения головы
         }
+
+        public void HandleKey(ConsoleKey key) //публичный метод для проверки значения нажатой клавиши
+        {
+            if (key == ConsoleKey.LeftArrow) //если была нажата клавиша "<-", то
+                direction = Direction.LEFT; //направление змейки изменяется на LEFT
+            else if (key == ConsoleKey.RightArrow)
+                direction = Direction.RIGHT;
+            else if (key == ConsoleKey.DownArrow)
+                direction = Direction.DOWN;
+            else if (key == ConsoleKey.UpArrow)
+                direction = Direction.UP;
+        }
     }
 }
