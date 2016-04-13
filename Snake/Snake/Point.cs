@@ -31,7 +31,7 @@ namespace Snake
             sym = p.sym;
         }
 
-        public void Move(int offset, Direction direction) //метод для сдвигания точки (расстояние смещения, направление смещения)
+        public void Move(int offset, Direction direction) //функция для сдвигания точки (расстояние смещения, направление смещения)
         {
             if (direction == Direction.RIGHT) //если смещение вправо, то
             {
@@ -55,6 +55,12 @@ namespace Snake
         {
             Console.SetCursorPosition(x, y); //задаем координаты точки
             Console.Write(sym); //выводим переданный символ в данной позиции
+        }
+
+        public void Clear()
+        {
+            sym = ' '; //меняем ранее указанный символ на пустой
+            Draw(); //отрисовываем точку с новым значением ("пустую") с помощью Draw
         }
 
         public override string ToString() //метод для удобства проверки значения переменной Point в отладчике
