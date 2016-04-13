@@ -10,18 +10,22 @@ namespace Snake
     {
         static void Main(string[] args)
         {
-            Point p1 = new Point(1, 3, '*'); //вызов функции-конструктора с указанием значений x, y, sym
-            p1.Draw(); //вызываем метод Draw
+            //устанавливаем размер окна в консоли
+            Console.SetBufferSize(80, 25);
+            
+            //отрисовка рамочки
+            HorizontalLine upLine = new HorizontalLine(0, 78, 0, '+'); //вызов конструктора с заданными параметрами для создания горизонтальной линии
+            HorizontalLine downLine = new HorizontalLine(0, 78, 24, '+');     
+            VerticalLine leftLine = new VerticalLine(0, 24, 0, '+'); //вызов конструктора с заданными параметрами для создания вертикальной линии
+            VerticalLine rightLine = new VerticalLine(0, 24, 78, '+');
+            upLine.DrawLine(); //вызов метода DrawHorLine для вывода линии на экран
+            downLine.DrawLine();
+            leftLine.DrawLine(); //вызов метода DrawVerLine для вывода линии на экран
+            rightLine.DrawLine();
 
-            Point p2 = new Point(4, 5, '#'); //переменная p2 - объект класса Point            
-            p2.Draw();      
-            //инкапсуляция - свойство системы, которое позволяет объединить данные и методы, работающие с ними, в классе и скрыть детали реализации от пользователя
-
-            HorizontalLine line1 = new HorizontalLine(5, 10, 8, '+'); //вызов конструктора с заданными параметрами для создания горизонтальной линии
-            line1.DrawHorLine(); //вызов метода DrawHorLine для вывода линии на экран
-
-            VerticalLine line2 = new VerticalLine(7, 10, 17, '*'); //вызов конструктора с заданными параметрами для создания вертикальной линии
-            line2.DrawVerLine(); //вызов метода DrawVerLine для вывода линии на экран
+            //отрисовка точек
+            Point p = new Point(4, 5, '*');
+            p.Draw();            
 
             Console.ReadLine(); //ожидание нажатия Enter от пользователя
         }   
