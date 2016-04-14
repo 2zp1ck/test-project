@@ -10,7 +10,8 @@ namespace Snake
     {
         protected List<Point> pList; //protected - модификатор доступа, чтобы переменная pList была видна у наследников 
 
-        public void DrawLine() //метод для вывода линии на экран
+        public virtual void DrawLine() //метод для вывода линии на экран
+        //virtual означает, что любой наследник может переопределить метод DrawLine и написать свою реализацию данного метода
         {
             foreach (Point p in pList) //поочередный вывод точек из списка на экран
             {

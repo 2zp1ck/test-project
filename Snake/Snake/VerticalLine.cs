@@ -9,7 +9,7 @@ namespace Snake
     class VerticalLine : Figure //класс VerticalLine наследуется от класса Figure
     {
         //конструктор (метод, который вызывается при создании VerticalLine) для создания линии
-        public VerticalLine(int yUp, int yDown, int x, char sym) //параметры (координата по оси X, координата по оси Y верхнего конца, координата по оси Y нижнего конца, символ)
+        public VerticalLine(int yUp, int yDown, int x, char sym) //параметры (координата по оси Y верхнего конца, координата по оси Y нижнего конца, координата по оси X, символ)
         {
             pList = new List<Point>(); //пустой список
             //цикл для заполнения списка точками
