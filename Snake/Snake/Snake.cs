@@ -39,7 +39,7 @@ namespace Snake
         {
             Point head = pList.Last(); //метод Last возвращает последний элемент списка (позиция головы змейки до перемещения)
             Point nextPoint = new Point(head); //создание копии точки с координатами положения головы
-            nextPoint.Move(1, direction); //сдвигаем точку по направлению direction
+            nextPoint.Move(1, direction); //сдвигаем точку на 1 по направлению direction
             return nextPoint; //получение и возврат новой точки с новыми координатами для положения головы
         }
 
@@ -53,6 +53,20 @@ namespace Snake
                 direction = Direction.DOWN;
             else if (key == ConsoleKey.UpArrow)
                 direction = Direction.UP;
+        }
+
+        internal bool Eat(Point food) //метод, который возвращает бинарное значение - или правду, или ложь
+        {
+            Point head = GetNextPoint(); //используем метод для получения точки, соответствующей следующему положению головы "змейки"
+            if (head.IsHit(food)) //метод IsHit - если полученная точка (в которой "змейка" окажется на следующем ходу) совпадает с точкой, в которой находится "еда", то
+            //if (head.x == food.x && head.y == food.y)
+            {
+                food.sym = head.sym; //меняем символ "еды" (так как теперь эта точка является частью "змейки")
+                pList.Add(food); //добавляем точку food в список точек, из которых состоит "змейка"
+                return true; //возвращаем true, так как "змейка" поела
+            }
+            else //иначе возвращаем false
+                return false;
         }
     }
 }
