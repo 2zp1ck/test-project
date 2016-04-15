@@ -20,21 +20,5 @@ namespace Snake
                 pList.Add(p); //добавление точек в список pList
             }            
         }
-
-        public override void DrawLine() //override - ключевое слово для альтернативной реализации метода DrawLine
-        {
-            Console.ForegroundColor = ConsoleColor.Yellow; //выбираем желтый цвет
-
-            /*
-            foreach (Point p in pList) //для всех точек в списке
-            {
-                p.Draw(); //отрисовка точек желтым цветом
-            }
-            */
-
-            base.DrawLine(); //вызываем реализацию базового класса метода DrawLine (из класса Figure)
-
-            Console.ForegroundColor = ConsoleColor.White; //изменение цвета на белый
-        }
     }
 }

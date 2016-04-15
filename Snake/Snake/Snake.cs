@@ -43,6 +43,17 @@ namespace Snake
             return nextPoint; //получение и возврат новой точки с новыми координатами для положения головы
         }
 
+        internal bool IsHitTail() //метод для проверки столкновения "змейки" с самой собой
+        {
+            var head = pList.Last(); //получаем координаты головы "змейки"
+            for (int i = 0; i < pList.Count - 2; i++)
+            {
+                if (head.IsHit(pList[i])) //проверяем совпадения координат головы "змейки" и координат оставшихся в "змейке" точек (метод IsHit для точки)
+                    return true;
+            }
+            return false;
+        }
+
         public void HandleKey(ConsoleKey key) //публичный метод для проверки значения нажатой клавиши
         {
             if (key == ConsoleKey.LeftArrow) //если была нажата клавиша "<-", то

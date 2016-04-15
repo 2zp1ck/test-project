@@ -11,34 +11,47 @@ namespace Snake
     {
         static void Main(string[] args)
         {
-            VerticalLine vl = new VerticalLine(0, 10, 5, '%'); //создаем вертикальную линию (является наследником фигуры)
-            Draw(vl); //вызываем метод Draw
+            //устанавливаем размер окна в консоли
+            Console.SetBufferSize(80, 25);
 
-            Point p = new Point(4, 5, '*'); //создаем точку
-            Figure fSnake = new Snake(p, 4, Direction.RIGHT); //создаем "змейку" ("змейка" тоже является фигурой)
-            //fSnake теперь просто фигура, для нее недоступны методы, специфичные именно для класса Snake
-            Draw(fSnake); //вызываем метод Draw, передавая в качестве фигуры fSnake
-            Snake snake = (Snake)fSnake; //явное приведение типа, после чего можно использовать методы, относящиеся к классу Snake (которых не было у класса Figure)
+            Walls walls = new Walls(80, 25); //создаем переменную класса Walls
+            walls.DrawLine();
+            
+            //отрисовка точек
+            Point p = new Point(4, 5, '*');
+            Snake snake = new Snake(p, 4, Direction.RIGHT); //создаем переменную snake класса Snake
+            snake.DrawLine(); //вывод змейки на экран       
 
-            HorizontalLine hl = new HorizontalLine(0, 5, 6, '&'); //создаем горизонтальную линию
+            FoodCreator foodCreator = new FoodCreator(80, 25, '$'); //создаем переменную класса FoodCreator (передаем размер экрана и символ "еды")
+            Point food = foodCreator.CreateFood(); //вызываем метод CreateFood для переменной food класса Point
+            food.Draw(); //выводим полученную из метода CreateFood точку "еды" на экран
 
-            List<Figure> figures = new List<Figure>(); //создаем список фигур
-            //вносим в список и "змейку", и вертикальную линию, и горизонтальную линию (так как они все являются фигурами)
-            figures.Add(fSnake);
-            figures.Add(vl);
-            figures.Add(hl);
-
-            foreach (var f in figures) //для всех фигур в списке
+            while (true) //бесконечный цикл
             {
-                f.DrawLine(); //вызываем метод DrawLine
+                //проверка
+                if (walls.IsHit(snake) || snake.IsHitTail()) //если "змейка" столкнулась со стеной или с собственным хвостом, то
+                {
+                    break; //выход из цикла (игра окончена)
+                }
+                if (snake.Eat(food)) //если вызываемый метод Eat возвращает значение true ("змейка" кушает), то
+                {
+                    food = foodCreator.CreateFood(); //снова вызываем метод CreateFood и создаем новую переменную с координатами "еды"
+                    food.Draw(); //выводим полученную точку "еды" на экран
+                }
+                else //иначе
+                {
+                    snake.Move(); //перемещение змейки в ранее указанном направлении с помощью метода Move
+                }
+
+                Thread.Sleep(150); //задержка
+
+                if (Console.KeyAvailable) //проверка, была ли нажата какая-либо клавиша
+                {
+                    ConsoleKeyInfo key = Console.ReadKey(); //в переменную key получаем значение нажатой клавиши
+                    snake.HandleKey(key.Key); //вызов метода HandleKey класса Snake для проверки клавиши
+                }
+                //если никакая клавиша из указанных нажата не была, то змейка продолжает двигаться в том же направлении, что и ранее
             }
-        }
-
-        static void Draw(Figure figure) //метод Draw принимает в качестве аргумента любую фигуру и вызывает для нее метод DrawLine
-        {
-            figure.DrawLine();
-        }
-
-        //полиморфизм - третья концепция объектно-ориентированного программирования после инкапсуляции и наследования (https://msdn.microsoft.com/ru-ru/library/ms173152.aspx)
+        }   
     }
 }
